@@ -1,0 +1,776 @@
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the inuit.css-web-template) to override them.
+ */
+@import "compass/utilities/general/hacks";  /* filter-gradient needs this */
+@import "compass/css3";
+
+
+
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+$debug-mode:        false!default;
+
+
+
+
+
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+$global-border-box: true!default;
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+$base-font-size:    16px!default;
+$base-line-height:  24px!default;
+
+/**
+ * Base font-family.
+ */
+$base-font-family:  'Raleway'!default;
+$alt-font:          'Open Sans', sans-serif;
+$fancy-font:        'Playfair Display', serif;
+
+/**
+ * Default colour for objects’ borders etc.
+ */
+$base-ui-color:     #ccc!default;
+
+
+
+
+
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Responsiveness?
+ */
+$responsive:        true!default;
+
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: `$responsive` variable above must be set to true before enabling this.
+ */
+$responsive-extra:  false!default;
+
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+$push:              false!default;
+/**
+ * Note: `$push` variable above must be set to true before enabling these.
+ */
+$palm-push:         false!default;
+$lap-push:          false!default;
+$lap-and-up-push:   false!default;
+$portable-push:     false!default;
+$desk-push:         false!default;
+
+$pull:              false!default;
+/**
+ * Note: `$pull` variable above must be set to true before enabling these.
+ */
+$palm-pull:         false!default;
+$lap-pull:          false!default;
+$lap-and-up-pull:   false!default;
+$portable-pull:     false!default;
+$desk-pull:         false!default;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+$lap-start:         481px!default;
+$desk-start:        1024px!default;
+$desk-wide-start:   1200px!default;
+
+
+
+
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+$giga-size:         96px!default;
+$mega-size:         72px!default;
+$kilo-size:         48px!default;
+
+$h1-size:           36px!default; // .alpha
+$h2-size:           30px!default; // .beta
+$h3-size:           24px!default; // .gamma
+$h4-size:           20px!default; // .delta
+$h5-size:           16px!default; // .epsilon
+$h6-size:           14px!default; // .zeta
+
+$milli-size:        12px!default;
+$micro-size:        10px!default;
+
+
+
+
+
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+$english-quotes:    true!default;
+
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+$open-quote:    null;
+$close-quote:   null;
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+@if $english-quotes != true{
+    $open-quote:    \00AB;
+    $close-quote:   \00BB;
+}
+
+
+
+
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+$brand-color:       #38736F!default;
+$green-color:       #63945F;
+$blue-color:        #144451;
+$tan-color:         #F3F3E2;
+$grey-color:        #A2A2A2;
+
+
+/**
+ * How big would you like round corners to be by default?
+ */
+$brand-round:        4px!default;
+
+::selection {
+    background: $brand-color; /* Safari */
+    color:white;
+    }
+::-moz-selection {
+    background: $brand-color; /* Firefox */
+    color:white;
+}
+
+
+
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$use-grids:                 true!default;
+$use-flexbox:               false!default;
+$use-columns:               false!default;
+$use-nav:                   false!default;
+$use-options:               false!default;
+$use-pagination:            false!default;
+$use-breadcrumb:            false!default;
+$use-media:                 false!default;
+$use-marginalia:            false!default;
+$use-island:                false!default;
+$use-block-list:            false!default;
+$use-matrix:                false!default;
+$use-split:                 false!default;
+$use-this-or-this:          false!default;
+$use-link-complex:          false!default;
+$use-flyout:                false!default;
+$use-arrows:                false!default;
+$use-sprite:                false!default;
+$use-icon-text:             true!default;
+$use-beautons:              false!default;
+$use-lozenges:              false!default;
+$use-rules:                 false!default;
+$use-stats:                 false!default;
+$use-greybox:               false!default;
+$use-slider:                true!default;
+$use-banners:               false!default;
+$use-page-templates:        false!default;
+$use-mailing-list:          true!default;
+
+
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+/*------------------------------------*\
+    INCLUDES
+\*------------------------------------*/
+
+.transition {
+    @include transition-property(all);
+    @include transition-duration(0.4s);
+    @include transition-timing-function(ease-in); 
+}
+.transitionSlow {
+    @include transition-property(all);
+    @include transition-duration(1.2s);
+    @include transition-timing-function(ease-in); 
+}
+
+.transitionBG {
+    @include transition-property(background);
+    @include transition-duration(0.4s);
+    @include transition-timing-function(ease-in); 
+}
+// TRANSITIONS
+
+.colorChange {
+    animation: colorChange 90s infinite;
+    -webkit-animation: colorChange 90s infinite; 
+}
+
+@keyframes colorChange {
+    0% {
+        background: $brand-color;
+    }  
+    16% {
+        background: $blue-color; 
+    } 
+    80% {
+        background: $green-color;
+    }
+    100% {
+        background: $brand-color;
+    }           
+}
+
+@-webkit-keyframes colorChange {
+    0% {
+        background: $brand-color;
+    }  
+    16% {
+        background: $blue-color; 
+    } 
+    80% {
+        background: $green-color;
+    }
+    100% {
+        background: $brand-color;
+    }  
+}
+
+@-moz-keyframes colorChange {
+    0% {
+        background: $brand-color;
+    }  
+    16% {
+        background: $blue-color; 
+    } 
+    80% {
+        background: $green-color;
+    }
+    100% {
+        background: $brand-color;
+    }  
+}    
+
+.bookButton {
+    animation: bookButton 5s infinite;
+    -webkit-animation: bookButton 5s infinite; 
+}
+
+@keyframes bookButton {
+    0% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }  
+    16% {
+        color: $blue-color; 
+        border-color: $blue-color; 
+    } 
+    80% {
+        color: $green-color;
+        border-color: $green-color;
+    }
+    100% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }            
+}
+
+@-webkit-keyframes bookButton {
+    0% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }  
+    16% {
+        color: $blue-color; 
+        border-color: $blue-color; 
+    } 
+    80% {
+        color: $green-color;
+        border-color: $green-color;
+    }
+    100% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }  
+}
+
+@-moz-keyframes bookButton {
+    0% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }  
+    16% {
+        color: $blue-color; 
+        border-color: $blue-color; 
+    } 
+    80% {
+        color: $green-color;
+        border-color: $green-color;
+    }
+    100% {
+        color: $brand-color;
+        border-color: $brand-color;
+    }  
+} 
+
+.lighterColorChange {
+    animation: lighterColorChange 90s infinite;
+    -webkit-animation: lighterColorChange 90s infinite; 
+}
+
+@keyframes lighterColorChange {
+    0% {
+        background: $brand-color;
+    }  
+    16% {
+        background: $blue-color; 
+    } 
+    80% {
+        background: $green-color;
+    }
+    100% {
+        background: $brand-color;
+    }           
+}
+
+@-webkit-keyframes lighterColorChange {
+    0% {
+        color: lighten($brand-color,5%);
+    }  
+    16% {
+        color: lighten($blue-color,5%) 
+    } 
+    80% {
+        color: lighten($green-color,5%);
+    }
+    100% {
+        color: lighten($brand-color,5%);
+    }  
+}
+
+@-moz-keyframes lighterColorChange {
+    0% {
+        background: $brand-color;
+    }  
+    16% {
+        background: $blue-color; 
+    } 
+    80% {
+        background: $green-color;
+    }
+    100% {
+        background: $brand-color;
+    }  
+}  
+
+// LIGHT TO GREY COLOR CHANGE
+
+.lightToGrey {
+    animation-name: lightToGrey;
+    -webkit-animation-name: lightToGrey;  
+
+    animation-duration: 10s; 
+    -webkit-animation-duration: 10s;
+
+    animation-timing-function: ease;    
+    -webkit-animation-timing-function: ease;    
+
+    visibility: visible !important;    
+}
+
+@keyframes lightToGrey {
+    0% {
+        color: white;
+    } 
+    60% {
+        color: white;
+    }      
+    100% {
+        color: $grey-color;
+    }           
+}
+
+@-webkit-keyframes lightToGrey {
+    0% {
+        color: white;
+    } 
+    60% {
+        color: white;
+    }      
+    100% {
+        color: $grey-color;
+    }      
+}
+
+@-moz-keyframes lightToGrey {
+    0% {
+        color: white;
+    } 
+    60% {
+        color: white;
+    }      
+    100% {
+        color: $grey-color;
+    }     
+} 
+
+/*
+==============================================
+tossing
+==============================================
+*/
+
+.tossing{
+    animation-name: tossing;
+    -webkit-animation-name: tossing;    
+
+    animation-duration: 2.5s;   
+    -webkit-animation-duration: 2.5s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes tossing {
+    0% {
+        transform: rotate(-4deg);   
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(-4deg);   
+    }                       
+}
+
+@-webkit-keyframes tossing {
+    0% {
+        -webkit-transform: rotate(-4deg);   
+    }
+    50% {
+        -webkit-transform: rotate(4deg);
+    }
+    100% {
+        -webkit-transform: rotate(-4deg);   
+    }               
+}
+
+
+/*
+==============================================
+opacity
+==============================================
+*/
+
+.opacity{
+    visibility: visible!important;
+    animation-name: opacity;
+    -webkit-animation-name: opacity;    
+
+    animation-duration: 1s;   
+    -webkit-animation-duration: 1s;
+
+    animation-iteration-count: once;
+    -webkit-animation-iteration-count: once;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }                       
+}
+
+@-webkit-keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }            
+}
+
+
+/*
+==============================================
+slideup
+==============================================
+*/
+
+
+.slideup{
+    animation-name: slideup;
+    -webkit-animation-name: slideup;  
+
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+
+    animation-timing-function: ease;    
+    -webkit-animation-timing-function: ease;    
+
+    visibility: visible !important;                     
+}
+
+@keyframes slideup {
+    0% {
+        transform: translateY(100%);
+    }         
+    100% {
+        transform: translateY(0%);
+    }       
+}
+
+@-webkit-keyframes slideup {
+    0% {
+        -webkit-transform: translateY(100%);
+    }          
+    100% {
+        -webkit-transform: translateY(0%);
+    }   
+}
+
+@-moz-keyframes playAnimation {
+    0% {
+        -moz-transform: translateY(100%);
+    }     
+    100% {
+        -moz-transform: translateY(0%);
+    }        
+} 
+
+/*
+==============================================
+slideDown
+==============================================
+*/
+
+
+.slideDown{
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;  
+
+    animation-duration: .4s; 
+    -webkit-animation-duration: .4s;
+
+    animation-timing-function: ease;    
+    -webkit-animation-timing-function: ease;    
+
+    visibility: visible !important;                     
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }         
+    100% {
+        transform: translateY(0%);
+    }       
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+    }          
+    100% {
+        -webkit-transform: translateY(0%);
+    }   
+}
+
+@-moz-keyframes slideDown {
+    0% {
+        -moz-transform: translateY(-100%);
+    }          
+    100% {
+        -moz-transform: translateY(0%);
+    }   
+}
+
+
+/*
+==============================================
+slideUp
+==============================================
+*/
+
+
+.slideUp{
+    animation-name: slideUp;
+    -webkit-animation-name: slideUp;  
+
+    animation-duration: .4s; 
+    -webkit-animation-duration: .4s;
+
+    animation-timing-function: ease;    
+    -webkit-animation-timing-function: ease; 
+    
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    
+    visibility: visible !important;                     
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0%);
+    }         
+    100% {
+        transform: translateY(-100%);
+    }       
+}
+
+@-webkit-keyframes slideUp {
+    0% {
+        -webkit-transform: translateY(0%);
+    }          
+    100% {
+        -webkit-transform: translateY(-100%);
+    }   
+}
+
+@-moz-keyframes slideUp {
+    0% {
+        -moz-transform: translateY(0%);
+    }          
+    100% {
+        -moz-transform: translateY(-100%);
+    }   
+}
+
+
+
+
+
+// 20 DEGREE ROTATE
+.twentyDeg {
+    -webkit-animation-name: twentyDeg;  
+
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+
+    animation-timing-function: ease;    
+    -webkit-animation-timing-function: ease; 
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes twentyDeg { 100% { -moz-transform: rotate(-10deg); } }
+@-webkit-keyframes twentyDeg { 100% { -webkit-transform: rotate(-10deg); } }
+@keyframes twentyDeg { 100% { -webkit-transform: rotate(-10deg); transform:rotate(-10deg); } }
+
+
+
+ 
+
+@keyframes playAnimation {
+    0% {
+        stroke-dashoffset: 1200px;
+    }     
+    100% {
+        stroke-dashoffset: 0;
+    }           
+}
+
+@-webkit-keyframes playAnimation {
+    0% {
+        stroke-dashoffset: 1200px;
+    }     
+    100% {
+        stroke-dashoffset: 0;
+    }          
+}
+
+@-moz-keyframes playAnimation {
+    0% {
+        stroke-dashoffset: 1200px;
+    }     
+    100% {
+        stroke-dashoffset: 0;
+    }        
+} 
+
+
+
+
+@keyframes scaleFull {
+    0% {
+        transform: scale(0%);
+    }    
+    100% {
+        transform: scale(100%);
+    }              
+}
+
+@-webkit-keyframes scaleFull {
+    0% {
+        -webkit-transform: scale(0);
+    }    
+    100% {
+        -webkit-transform: scale(1);
+    }      
+}
+
+@-moz-keyframes scaleFull {
+    0% {
+        -moz-transform: scale(0%);
+    }    
+    100% {
+        -moz-transform: scale(100%);
+    }         
+} 

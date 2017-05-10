@@ -1,0 +1,132 @@
+@if $use-icon-text == true{
+
+/*------------------------------------*\
+    $ICON-TEXT
+\*------------------------------------*/
+/**
+ * For text-links etc that have an icon with them. Sometimes whitespace would
+ * suffice in creating a gap between the icon and text, for example:
+ *
+   <a href=#>
+       <i class="s  s--help"></i> Help &amp; support
+   </a>
+ *
+ * However we will sometimes want a larger, explicity set gap:
+   <a href=# class=icon-text>
+       <i class="icon-text__icon  s  s--help"></i>Help &amp; support
+   </a>
+ *
+ * Demo: jsfiddle.net/inuitcss/Q6Lbf
+ *
+ */
+.icon-text > .icon-text__icon{
+    margin-right:$half-spacing-unit / 2;
+}
+
+
+/**
+ * We can also reverse the direction of the margin for icons that appear to the
+ * right of the text content, thus:
+ *
+   <a href=# class=icon-text--rev>
+       Help &amp; support<i class="icon-text__icon  s  s--help"></i>
+   </a>
+ *
+ */
+.icon-text--rev > .icon-text__icon{
+    margin-left:$half-spacing-unit / 2;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?5iejgx');
+  src:url('../fonts/icomoon.eot?#iefix5iejgx') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?5iejgx') format('woff'),
+    url('../fonts/icomoon.ttf?5iejgx') format('truetype'),
+    url('../fonts/icomoon.svg?5iejgx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon'!important;
+  speak: none;
+  font-style: normal!important;
+  font-weight: normal!important;
+  font-variant: normal!important;
+  text-transform: none!important;
+  line-height: 1!important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-nav:before {
+  content: "\e600";
+}
+.icon-close:before {
+  content: "\e601";
+}
+.icon-down:before {
+  content: "\e602";
+}
+.icon-heart:before {
+  content: "\e603";
+}
+.icon-arrow-up-left:before {
+  content: "\e609";
+}
+.icon-arrow-up:before {
+  content: "\e60a";
+}
+.icon-arrow-up-right:before {
+  content: "\e60b";
+}
+.icon-arrow-right:before {
+  content: "\e60c";
+}
+.icon-arrow-down-right:before {
+  content: "\e60d";
+}
+.icon-arrow-down:before {
+  content: "\e60e";
+}
+.icon-arrow-down-left:before {
+  content: "\e60f";
+}
+.icon-arrow-left:before {
+  content: "\e610";
+}
+.icon-facebook:before {
+  content: "\e604";
+}
+.icon-instagram:before {
+  content: "\e605";
+}
+.icon-youtube:before {
+  content: "\e611";
+}
+.icon-paypal:before {
+  content: "\e612";
+}
+.icon-googleplus:before {
+  content: "\e606";
+}
+.icon-pinterest:before {
+  content: "\e607";
+}
+.icon-linkedin:before {
+  content: "\e608";
+}
+
+
+
+
+
+
+
+
+
+}//endif

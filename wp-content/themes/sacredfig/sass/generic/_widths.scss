@@ -1,0 +1,178 @@
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Sizes in human readable format. These are used in conjunction with other
+ * objects and abstractions found in inuit.css, most commonly the grid system
+ * and faux flexbox.
+ *
+ * We have a mixin to generate our widths and their breakpoint-specific
+ * variations.
+ */
+
+@mixin grid-setup($namespace: "") {
+    /**
+    * Whole
+    */
+    .#{$namespace}one-whole         { width:100%; }
+
+
+    /**
+    * Halves
+    */
+    .#{$namespace}one-half          { width:50%;
+        @media (max-width:700px) {
+            width:100%;
+        }
+    }
+
+
+    /**
+    * Thirds
+    */
+    .#{$namespace}one-third {
+        width:100%;
+        @media (min-width: 650px) {
+            width:33.333%;
+        }
+    }
+    .#{$namespace}two-thirds {
+        width:100%;
+        @media (min-width: 650px) {
+            width:66.666%;
+
+        }
+    }
+
+
+    /**
+    * Quarters
+    */
+    .#{$namespace}one-quarter       { width:100%;
+        @media (min-width: 700px) {
+            width:25%;
+        }
+     }
+    .#{$namespace}two-quarters      { width:50%; }
+    .#{$namespace}three-quarters    { width:100%;
+        @media (min-width: 700px) {
+            width:75%;
+        }
+    }
+
+
+    /**
+    * Fifths
+    */
+    .#{$namespace}one-fifth         { width:20%; }
+    .#{$namespace}two-fifths        { width:40%; }
+    .#{$namespace}three-fifths      { width:60%; }
+    .#{$namespace}four-fifths       { width:80%; }
+
+
+    /**
+    * Sixths
+    */
+    .#{$namespace}one-sixth {
+        width:100%;
+        @media (min-width: 650px) {
+            width:16.666%;
+        }
+    }
+    .#{$namespace}two-sixths        { width:33.33% }
+    .#{$namespace}three-sixths      { width:50% }
+    .#{$namespace}four-sixths       { width:66.66% }
+    .#{$namespace}five-sixths {
+        width:100%;
+        @media (min-width: 650px) {
+            width:83.333%;
+        }
+    }
+
+
+    /**
+    * Eighths
+    */
+    .#{$namespace}one-eighth        { width:12.5%; }
+    .#{$namespace}two-eighths       { width:25% }
+    .#{$namespace}three-eighths     { width:37.5%; }
+    .#{$namespace}four-eighths      { width:50%; }
+    .#{$namespace}five-eighths      { width:62.5%; }
+    .#{$namespace}six-eighths       { width:75%; }
+    .#{$namespace}seven-eighths     { width:87.5%; }
+
+
+    /**
+    * Tenths
+    */
+    .#{$namespace}one-tenth         { width:10%; }
+    .#{$namespace}two-tenths        { width:20%; }
+    .#{$namespace}three-tenths      { width:30%; }
+    .#{$namespace}four-tenths       { width:40%; }
+    .#{$namespace}five-tenths       { width:50%; }
+    .#{$namespace}six-tenths        { width:60%; }
+    .#{$namespace}seven-tenths      { width:70%; }
+    .#{$namespace}eight-tenths      { width:80%; }
+    .#{$namespace}nine-tenths       { width:90%; }
+
+
+
+}
+
+@include grid-setup();
+
+
+
+/**
+ * If you have set `$responsive` to ‘true’ in `_vars.scss` then you now have
+ * access to these classes. You can define at which breakpoint you’d like an
+ * element to be a certain size, e.g.:
+ *
+ * `<div class="g  one-quarter  lap-one-half  palm-one-whole"> ... </div>`
+ *
+ * This would create a `div` that, at ‘desktop’ sizes, takes up a quarter of the
+ * horizontal space, a half of that space at ‘tablet’ sizes, and goes full width
+ * at ‘mobile’ sizes.
+ *
+ * Demo: jsfiddle.net/inuitcss/WS4Ge
+ *
+ */
+
+@if $responsive == true{
+
+@include media-query(palm){
+    @include grid-setup("palm-");
+}
+
+@include media-query(lap){
+    @include grid-setup("lap-");
+}
+
+@include media-query(lap-and-up){
+    @include grid-setup("lap-and-up-");
+}
+
+@include media-query(portable){
+    @include grid-setup("portable-");
+}
+
+@include media-query(desk){
+    @include grid-setup("desk-");
+}
+
+
+/**
+ * If you have set the additional `$responsive-extra` variable to ‘true’ in
+ * `_vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+
+@if $responsive-extra == true{
+
+@include media-query(desk-wide){
+    @include grid-setup("desk-wide-");
+}
+
+}
+
+} /* endif */

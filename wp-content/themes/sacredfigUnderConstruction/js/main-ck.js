@@ -1,0 +1,2 @@
+// PARALAX OPACITY CHAGNE
+$(function(){var e=$(window).width(),t=$(document).height()-$(window).height();if(e>=700){var n=50,r=t,i=$("#fading");$(window).bind("scroll",function(){var e=$(document).scrollTop(),t=0;e<=n?t=1:e<=r&&(t=1-e/r);i.css("opacity",t)})}});jQuery(document).bind("gform_confirmation_loaded",function(e,t){$(".logo").removeClass("white");$("#page").removeClass("colorChange");$("#page").addClass("confirmation")});

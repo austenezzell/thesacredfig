@@ -1,0 +1,428 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the inuit.css-web-template) to override them.
+ */
+/* filter-gradient needs this */
+/* line 11, ../sass/_defaults.scss */
+a {
+  text-decoration: none;
+  color: white; }
+  /* line 14, ../sass/_defaults.scss */
+  a:hover {
+    color: gray; }
+  /* line 17, ../sass/_defaults.scss */
+  a:focus {
+    color: FF92FA; }
+
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+/**
+ * Base font-family.
+ */
+/**
+ * Default colour for objects’ borders etc.
+ */
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Responsiveness?
+ */
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: `$responsive` variable above must be set to true before enabling this.
+ */
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+/**
+ * Note: `$push` variable above must be set to true before enabling these.
+ */
+/**
+ * Note: `$pull` variable above must be set to true before enabling these.
+ */
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+/**
+ * How big would you like round corners to be by default?
+ */
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+/*------------------------------------*\
+    INCLUDES
+\*------------------------------------*/
+/* line 244, ../sass/_defaults.scss */
+.transition {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
+
+/* line 252, ../sass/_defaults.scss */
+.colorChange {
+  animation-name: colorChange;
+  -webkit-animation-name: colorChange;
+  animation-duration: 10s;
+  -webkit-animation-duration: 10s; }
+
+@keyframes colorChange {
+  /* line 266, ../sass/_defaults.scss */
+  0% {
+    background: #38736f; }
+
+  /* line 269, ../sass/_defaults.scss */
+  16% {
+    background: #144451; }
+
+  /* line 272, ../sass/_defaults.scss */
+  80% {
+    background: #63945f; }
+
+  /* line 275, ../sass/_defaults.scss */
+  100% {
+    background: #38736f; } }
+
+@-webkit-keyframes colorChange {
+  /* line 281, ../sass/_defaults.scss */
+  0% {
+    background: #38736f; }
+
+  /* line 284, ../sass/_defaults.scss */
+  16% {
+    background: #144451; }
+
+  /* line 287, ../sass/_defaults.scss */
+  80% {
+    background: #63945f; }
+
+  /* line 290, ../sass/_defaults.scss */
+  100% {
+    background: #38736f; } }
+
+@-moz-keyframes colorChange {
+  /* line 296, ../sass/_defaults.scss */
+  0% {
+    background: #38736f; }
+
+  /* line 299, ../sass/_defaults.scss */
+  16% {
+    background: #144451; }
+
+  /* line 302, ../sass/_defaults.scss */
+  80% {
+    background: #63945f; }
+
+  /* line 305, ../sass/_defaults.scss */
+  100% {
+    background: #38736f; } }
+
+/* line 311, ../sass/_defaults.scss */
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important; }
+
+@keyframes fadeIn {
+  /* line 325, ../sass/_defaults.scss */
+  0% {
+    opacity: 0.0; }
+
+  /* line 328, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn {
+  /* line 334, ../sass/_defaults.scss */
+  0% {
+    opacity: 0.0; }
+
+  /* line 337, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  /* line 343, ../sass/_defaults.scss */
+  0% {
+    opacity: 0.0; }
+
+  /* line 346, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+/* line 352, ../sass/_defaults.scss */
+#typed-cursor {
+  opacity: 1;
+  font-weight: 100;
+  color: #38736f;
+  font-size: 24px;
+  line-height: 12px;
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+  -webkit-animation: blink 1.5s infinite; }
+
+@-keyframes blink {
+  /* line 374, ../sass/_defaults.scss */
+  0% {
+    opacity: 1; }
+
+  /* line 375, ../sass/_defaults.scss */
+  50% {
+    opacity: 0; }
+
+  /* line 376, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes blink {
+  /* line 379, ../sass/_defaults.scss */
+  0% {
+    opacity: 1; }
+
+  /* line 380, ../sass/_defaults.scss */
+  50% {
+    opacity: 0; }
+
+  /* line 381, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes blink {
+  /* line 384, ../sass/_defaults.scss */
+  0% {
+    opacity: 1; }
+
+  /* line 385, ../sass/_defaults.scss */
+  50% {
+    opacity: 0; }
+
+  /* line 386, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+/* line 391, ../sass/_defaults.scss */
+.slideRight {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important; }
+
+@keyframes slideRight {
+  /* line 405, ../sass/_defaults.scss */
+  0% {
+    left: translateX(50%); }
+
+  /* line 408, ../sass/_defaults.scss */
+  100% {
+    transform: translateX(0%); } }
+
+@-webkit-keyframes slideRight {
+  /* line 414, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateX(50%); }
+
+  /* line 417, ../sass/_defaults.scss */
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes slideRight {
+  /* line 422, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateX(50%); }
+
+  /* line 425, ../sass/_defaults.scss */
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@media (min-width: 800px) {
+  /* line 432, ../sass/_defaults.scss */
+  .slowSlideRight {
+    animation-name: slowSlideRight;
+    -webkit-animation-name: slowSlideRight;
+    animation-duration: 1.2s;
+    -webkit-animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important; } }
+
+@keyframes slowSlideRight {
+  /* line 445, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateX(50%);
+    opacity: 0; }
+
+  /* line 449, ../sass/_defaults.scss */
+  50% {
+    -webkit-transform: translateX(0%); }
+
+  /* line 452, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes slowSlideRight {
+  /* line 458, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateX(50%);
+    opacity: 0; }
+
+  /* line 462, ../sass/_defaults.scss */
+  50% {
+    -webkit-transform: translateX(0%); }
+
+  /* line 465, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes slowSlideRight {
+  /* line 470, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateX(50%);
+    opacity: 0; }
+
+  /* line 474, ../sass/_defaults.scss */
+  50% {
+    -webkit-transform: translateX(0%); }
+
+  /* line 477, ../sass/_defaults.scss */
+  100% {
+    opacity: 1; } }
+
+/*
+==============================================
+slideDown
+==============================================
+*/
+/* line 489, ../sass/_defaults.scss */
+.slideDown {
+  animation-name: slideDown;
+  -webkit-animation-name: slideDown;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  visibility: visible !important; }
+
+@keyframes slideDown {
+  /* line 503, ../sass/_defaults.scss */
+  0% {
+    transform: translateY(-100%); }
+
+  /* line 506, ../sass/_defaults.scss */
+  50% {
+    transform: translateY(8%); }
+
+  /* line 509, ../sass/_defaults.scss */
+  65% {
+    transform: translateY(-4%); }
+
+  /* line 512, ../sass/_defaults.scss */
+  80% {
+    transform: translateY(4%); }
+
+  /* line 515, ../sass/_defaults.scss */
+  95% {
+    transform: translateY(-2%); }
+
+  /* line 518, ../sass/_defaults.scss */
+  100% {
+    transform: translateY(0%); } }
+
+@-webkit-keyframes slideDown {
+  /* line 524, ../sass/_defaults.scss */
+  0% {
+    -webkit-transform: translateY(-100%); }
+
+  /* line 527, ../sass/_defaults.scss */
+  50% {
+    -webkit-transform: translateY(8%); }
+
+  /* line 530, ../sass/_defaults.scss */
+  65% {
+    -webkit-transform: translateY(-4%); }
+
+  /* line 533, ../sass/_defaults.scss */
+  80% {
+    -webkit-transform: translateY(4%); }
+
+  /* line 536, ../sass/_defaults.scss */
+  95% {
+    -webkit-transform: translateY(-2%); }
+
+  /* line 539, ../sass/_defaults.scss */
+  100% {
+    -webkit-transform: translateY(0%); } }

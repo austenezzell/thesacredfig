@@ -1,0 +1,208 @@
+@if $use-mailing-list == true{
+
+/*------------------------------------*\
+    $MAILING-LIST
+\*------------------------------------*/
+
+
+
+.signUp {
+  margin-bottom:30px;
+  padding: 0 15px;
+  max-width: 500px;
+  margin: 30px auto;
+  p {
+    margin:0 0 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .mailingList {
+    border:1px solid $grey-color;
+    margin:0 auto 5px;
+    #gforms_confirmation_message {
+      text-align: center;
+      padding: 30px 0;
+    }
+    .gform_wrapper {
+      max-width: 100%;
+      margin: 0!important;
+    }
+    .gform_body {
+      padding:0px 4px 0;
+      text-align: center!important;
+    }
+    input {
+      width:100%!important;;
+      display: inline-block;
+      background: none;
+      border:none!important;
+      text-align: center!important;
+    }
+    .gfield {
+      display: block!important;
+      width:100%;
+      @media(min-width:500px) {
+        width:33.3%!important;
+        display: inline-block!important;
+        padding:0 10px;
+      }
+    }
+    #field_1_3, #field_1_4, #field_1_2 {
+      padding:4px 0 2px;
+    }
+    .ginput_container {
+      width:100%;
+    }
+    .ginput_complex {
+
+      display:inline-block;
+    }
+    .gfield_label {
+      display: none!important;
+    }
+    label {
+      display: none!important;
+    }
+    input {
+      color: $grey-color;
+      padding: 4px!important;
+      font-size: 12px!important;
+    }
+    #field_1_3, #field_1_4 {
+      border-bottom:1px dotted $grey-color!important;
+      @media(min-width:500px){
+        border:none!important;
+      }
+    }
+    @media(min-width:500px){
+      #field_1_3, #field_1_4  {
+        position: relative;
+        &:after {
+          content: '';
+          height:18px;
+          width:1px;
+          right:0;
+          top:8px;
+          border-right:1px solid $grey-color;
+          position: absolute;
+        }
+      }
+    }
+    .top_label {
+      width:100%!important;
+    }
+    .gform_footer {
+      margin: 0!important;
+      padding: 4px!important;
+      #gform_submit_button_1 {
+        border-top:1px solid $grey-color!important;
+        color: $grey-color;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top:8px!important;
+        font-weight: 700px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        &:hover {
+          color: black!important;
+        }
+      }
+    }
+    ::-webkit-input-placeholder {
+       color: $grey-color;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: $grey-color;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: $grey-color;
+    }
+
+    :-ms-input-placeholder {
+       color: $grey-color;
+    }
+    input:focus::-webkit-input-placeholder { color:transparent; }
+    input:focus:-moz-placeholder { color:transparent; }
+    input:focus:input-placeholder { color:transparent; }
+
+    // ERROR
+    .validation_error, .validation_message {
+      display: none;
+      ::-webkit-input-placeholder {
+         color: #994F4F!important;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+         color: #994F4F!important;
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+         color: #994F4F!important;
+      }
+
+      :-ms-input-placeholder {
+         color: #994F4F!important;
+      }
+    }
+    li.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required, .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label, .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+      margin: 0!important;
+      max-width: 100%!important;
+      padding:0!important;
+      background: #994F4F!important;
+      border:none!important;
+      color: #994F4F!important;
+      width:100%;
+      text-align: center!important;
+      @media(min-width:500px){
+        width:33.3%!important;
+      }
+    }
+    .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container{
+      width:100%!important;
+    }
+    .gform_ajax_spinner {
+      width:60px;
+      height: auto;
+      margin-top:10px;
+      margin-bottom: 10px;
+      margin-left:-30px;
+      left:50%;
+      text-align: center;
+      position: relative;
+      @extend .tossing;
+    }
+  }
+  input, button {
+      -webkit-appearance: none!important;
+  }
+
+  .confirmation {
+    color:$blue-color!important;
+    background: $tan-color!important;
+    h2.comingSoon, p.progress {
+      display: none;
+    }
+    .gform_confirmation_message_1{
+      font-family: $base-font-family;
+    }
+    .mailingList {
+      border:none;
+      color: $blue-color;
+      font-size: 46px;
+    }
+    a.emailLink {
+      color: $blue-color;
+    }
+    span.love svg path {
+      fill:$green-color!important;
+    }
+  }
+}
+
+
+}//endif
